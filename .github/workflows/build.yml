@@ -29,7 +29,7 @@ jobs:
         cd ..
         cd spice-0.15.2
         cd spice-0.15.2
-        ./configure --prefix=/usr --sysconfdir=/etc \
+        sudo ./configure --prefix=/usr --sysconfdir=/etc \
         --localstatedir=/var --libdir=/usr/lib
         make
         make install
