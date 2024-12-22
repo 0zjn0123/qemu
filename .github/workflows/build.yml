@@ -17,7 +17,7 @@ jobs:
         ls -a -l
         
         sudo apt-get update
-        sudo apt-get install sphinx==5.3.0
+        sudo apt-get install sphinx=5.3.0
         sudo apt-get install -y git build-essential libglib2.0-dev pkg-config zlib1g-dev libpixman-1-dev git libfdt-dev libprotobuf-c-dev protobuf-c-compiler libxml2-utils libnuma-dev python3 python3-pip python3-venv
 
     - name: Install cross-compiler
