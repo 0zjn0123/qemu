@@ -6,22 +6,7 @@ jobs:
   build-and-cache-qemu:
     runs-on: ubuntu-latest  # 使用Ubuntu的最新版本作为运行器
     steps:
-    - name: Checkout source code
-      uses: actions/checkout@v2
-      with:
-        repository: qemu/qemu
-        path: qemu
-        submodules: recursive
-
-    - name: Cache QEMU
-      uses: actions/cache@v4.2.0
-      with:
-        path: ./qemu
-        key: ${{ runner.os }}-qemu-cache-${{ hashFiles('qemu/**') }}
-        restore-keys: |
-          ${{ runner.os }}-qemu-cache-
-        save-always: true
-
+    
     - name: Install dependencies
       run: |
         sudo apt-get update
