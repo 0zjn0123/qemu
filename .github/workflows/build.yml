@@ -18,7 +18,7 @@ jobs:
         mkdir spiceb
         cd spiceb
         ls ../.. -l -a
-        unzip x ../spice-protocol-0.14.3.zip
+        unzip ../spice-protocol-0.14.3.zip
         7z x ../spice-0.15.2.7z
         ls
         cd spice-protocol-0.14.3
