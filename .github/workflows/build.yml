@@ -20,13 +20,16 @@ jobs:
         ls ../.. -l -a
         7z x ../spice-protocol-0.14.3.zip
         7z x ../spice-0.15.2.7z
+        ls
         cd spice-protocol-0.14.3
+        make
         make install
         cd ..
         cd spice-0.15.2
         cd spice-0.15.2
-        
-        make instal
+        make
+        make install
+      
         cd ..
         cd ..
         cd ..
