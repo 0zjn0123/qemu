@@ -11,6 +11,7 @@ jobs:
       run: |
         ls
         pwd
+        ls -a -l
         mkdir spiceb
         cd spiceb
         ls ..
