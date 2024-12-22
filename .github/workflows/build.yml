@@ -33,7 +33,7 @@ jobs:
         cd spice-0.15.2
         ls -l -a
         
-        sudo ./configure --prefix=/usr --sysconfdir=/etc \
+        sudo sh ./configure --prefix=/usr --sysconfdir=/etc \
         --localstatedir=/var --libdir=/usr/lib
         make
         make install
