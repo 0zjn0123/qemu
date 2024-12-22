@@ -28,7 +28,10 @@ jobs:
         meson configure
         cd ..
         cd spice-0.15.2
+        ls
         cd spice-0.15.2
+        ls
+        
         sudo ./configure --prefix=/usr --sysconfdir=/etc \
         --localstatedir=/var --libdir=/usr/lib
         make
