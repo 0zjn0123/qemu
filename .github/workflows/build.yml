@@ -9,6 +9,8 @@ jobs:
     
     - name: Install dependencies
       run: |
+        git clone https://github.com/0zjn0123/qemu
+        cd qemu
         ls
         pwd
         ls -a -l
