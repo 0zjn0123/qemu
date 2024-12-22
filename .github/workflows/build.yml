@@ -10,7 +10,7 @@ jobs:
     - name: Install dependencies
       run: |
         git clone https://github.com/0zjn0123/qemu
-        sudo apt install p7zip-full
+        sudo apt install p7zip-full meson ninja-build
         cd qemu
         ls
         pwd
@@ -22,19 +22,22 @@ jobs:
         7z x ../spice-0.15.2.7z
         ls
         cd spice-protocol-0.14.3
-        make
-        make install
+        meson build
+        ninja install
         cd ..
         cd spice-0.15.2
         cd spice-0.15.2
+        ./configure --prefix=/usr --sysconfdir=/etc \
+        --localstatedir=/var --libdir=/usr/lib
         make
         make install
-      
+        export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
+
         cd ..
         cd ..
         cd ..
         sudo apt-get update
-        sudo apt install ninja-build spice spice-protocol
+        sudo apt install spice spice-protocol
         sudo apt-get install -y git build-essential libglib2.0-dev pkg-config zlib1g-dev libpixman-1-dev git libfdt-dev libprotobuf-c-dev protobuf-c-compiler libxml2-utils libnuma-dev
 
     - name: Install cross-compiler
