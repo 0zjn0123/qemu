@@ -15,34 +15,7 @@ jobs:
         ls
         pwd
         ls -a -l
-        mkdir spiceb
-        cd spiceb
-        ls ../.. -l -a
-        unzip ../spice-protocol-0.14.3.zip
-        7z x ../spice-0.15.2.7z
-        ls
-        cd spice-protocol-0.14.3
         
-        meson configure
-        meson build
-        meson configure
-        cd ..
-        ls -l -a
-        cd spice-0.15.2
-        ls -l -a
-        cd spice-0.15.2
-        ls -l -a
-        
-        sudo sh ./configure --prefix=/usr --sysconfdir=/etc \
-        --localstatedir=/var --libdir=/usr/lib
-        make
-        make install
-        echo export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH} >> ~/.bashrc
-        source ~/.bashrc
-
-        cd ..
-        cd ..
-        cd ..
         sudo apt-get update
         sudo apt install spice spice-protocol
         sudo apt-get install -y git build-essential libglib2.0-dev pkg-config zlib1g-dev libpixman-1-dev git libfdt-dev libprotobuf-c-dev protobuf-c-compiler libxml2-utils libnuma-dev
