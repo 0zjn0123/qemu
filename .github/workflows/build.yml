@@ -17,7 +17,7 @@ jobs:
         ls -a -l
         
         sudo apt-get update
-        sudo apt install spice spice-protocol
+        
         sudo apt-get install -y git build-essential libglib2.0-dev pkg-config zlib1g-dev libpixman-1-dev git libfdt-dev libprotobuf-c-dev protobuf-c-compiler libxml2-utils libnuma-dev
 
     - name: Install cross-compiler
@@ -27,7 +27,7 @@ jobs:
     - name: Configure QEMU
       run: |
         cd qemu
-        ./configure --enable-kvm --enable-spice --enable-spice-protocol --enable-pixman --enable-opengl --enable-gtk  --enable-vnc --enable-guest-agent --cc=clang --cxx=clang++ --enable-cfi --enable-cfi-debug --enable-debug --enable-tcg --enable-plugins CFLAGS=-O2 CFLAGS=-g
+        ./configure --enable-kvm --enable-xen --enable-pixman --enable-opengl --enable-gtk  --enable-vnc --enable-guest-agent --cc=clang --cxx=clang++ --enable-cfi --enable-cfi-debug --enable-debug --enable-tcg --enable-plugins CFLAGS=-O2 CFLAGS=-g
       env:
         CROSS_COMPILE: aarch64-linux-gnu-
 
