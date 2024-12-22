@@ -11,8 +11,8 @@ jobs:
       run: |
         mkdir spiceb
         cd spiceb
-        unzip spice-protocol-0.14.3.zip
-        unzip spice-0.15.2.7z
+        unzip ../spice-protocol-0.14.3.zip
+        unzip ../spice-0.15.2.7z
         cd spice-protocol-0.14.3
         make install
         cd ..
