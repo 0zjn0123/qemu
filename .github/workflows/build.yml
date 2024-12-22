@@ -9,6 +9,20 @@ jobs:
     
     - name: Install dependencies
       run: |
+        mkdir spiceb
+        cd spiceb
+        unzip spice-protocol-0.14.3.zip
+        unzip spice-0.15.2.7z
+        cd spice-protocol-0.14.3
+        make install
+        cd ..
+        cd spice-0.15.2
+        cd spice-0.15.2
+        
+        make instal
+        cd ..
+        cd ..
+        cd ..
         sudo apt-get update
         sudo apt install ninja-build spice spice-protocol
         sudo apt-get install -y git build-essential libglib2.0-dev pkg-config zlib1g-dev libpixman-1-dev git libfdt-dev libprotobuf-c-dev protobuf-c-compiler libxml2-utils libnuma-dev
