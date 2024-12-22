@@ -23,7 +23,7 @@ jobs:
         ls
         cd spice-protocol-0.14.3
         meson build
-        ninja install
+        meson setup --reconfigure
         cd ..
         cd spice-0.15.2
         cd spice-0.15.2
