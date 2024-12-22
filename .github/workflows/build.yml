@@ -31,7 +31,7 @@ jobs:
         sudo apt-get install libgtk-3-dev
         pip install sphinx_rtd_theme
 
-        ./configure --enable-kvm --enable-pixman --enable-opengl --enable-gtk  --enable-vnc --enable-guest-agent --cc=clang --cxx=clang++ --enable-cfi --enable-cfi-debug --enable-debug --enable-tcg --enable-plugins CFLAGS=-O2 CFLAGS=-g
+        ./configure --enable-kvm --enable-pixman --enable-opengl --enable-gtk  --enable-vnc --enable-guest-agent --cc=aarch64-linux-gnu-gcc --cxx=aarch64-linux-gnu-g++ --enable-cfi --enable-cfi-debug --enable-debug --enable-tcg --enable-plugins CFLAGS=-O2 CFLAGS=-g
       env:
         CROSS_COMPILE: aarch64-linux-gnu-
 
