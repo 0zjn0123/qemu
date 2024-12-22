@@ -18,7 +18,7 @@ jobs:
         mkdir spiceb
         cd spiceb
         ls ../.. -l -a
-        7z x ../spice-protocol-0.14.3.zip
+        unzip x ../spice-protocol-0.14.3.zip
         7z x ../spice-0.15.2.7z
         ls
         cd spice-protocol-0.14.3
@@ -27,10 +27,11 @@ jobs:
         meson build
         meson configure
         cd ..
+        ls -l -a
         cd spice-0.15.2
-        ls
+        ls -l -a
         cd spice-0.15.2
-        ls
+        ls -l -a
         
         sudo ./configure --prefix=/usr --sysconfdir=/etc \
         --localstatedir=/var --libdir=/usr/lib
