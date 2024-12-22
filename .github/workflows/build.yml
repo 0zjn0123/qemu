@@ -23,8 +23,9 @@ jobs:
         ls
         cd spice-protocol-0.14.3
         
-        meson setup --reconfigure
-        meson install
+        meson configure
+        meson build
+        meson configure
         cd ..
         cd spice-0.15.2
         cd spice-0.15.2
