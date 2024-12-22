@@ -9,8 +9,10 @@ jobs:
     
     - name: Install dependencies
       run: |
+        ls
         mkdir spiceb
         cd spiceb
+        ls ..
         unzip ../spice-protocol-0.14.3.zip
         unzip ../spice-0.15.2.7z
         cd spice-protocol-0.14.3
