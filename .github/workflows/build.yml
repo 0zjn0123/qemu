@@ -27,7 +27,7 @@ jobs:
     - name: Configure QEMU
       run: |
         cd qemu
-        pip install epoxy
+        sudo apt-get install libepoxy-dev
         
         ./configure --enable-kvm --enable-pixman --enable-opengl --enable-gtk  --enable-vnc --enable-guest-agent --cc=clang --cxx=clang++ --enable-cfi --enable-cfi-debug --enable-debug --enable-tcg --enable-plugins CFLAGS=-O2 CFLAGS=-g
       env:
