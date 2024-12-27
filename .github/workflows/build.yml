@@ -44,8 +44,8 @@ jobs:
         #export PATH=$PATH:/usr/local/toolchain/gcc-linaro-6.4.1-2017.11-x86_64_aarch64-linux-gnu/bin
         
         
-        ./configure --enable-kvm --enable-pixman --enable-opengl --enable-gtk  --enable-vnc --enable-guest-agent --cc=$CC --cxx=$CXX \
-        --enable-cfi --enable-cfi-debug --enable-debug --enable-tcg --enable-plugins CFLAGS=-O2 CFLAGS=-g
+        ./configure --enable-kvm --enable-pixman --enable-opengl --enable-sdl --enable-vnc --enable-guest-agent --cc=$CC --cxx=$CXX \
+        --enable-cfi --enable-cfi-debug --enable-debug --enable-tcg --enable-plugins CFLAGS=-O2 CFLAGS=-g –enable-virtfs –enable-modules --disable-werror –extra-cflags="-O3" --target-list=aarch64-softmmu,x86_64-softmmu
       env:
         CROSS_COMPILE: aarch64-linux-gnu-
 
