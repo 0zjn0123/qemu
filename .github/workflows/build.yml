@@ -26,8 +26,13 @@ jobs:
     - name: Install LLVM and Clang for AArch64
       uses: KyleMayes/install-llvm-action@v2
       with:
-        version: "10.0"  # 您可以指定需要的版本
+        version: "12.0.0"  # 您可以指定需要的版本
         arch: arm64  # 指定架构为arm64
+    - name: Set environment variables for clang aarch64
+      run: |
+        echo "CC=clang" >> $GITHUB_ENV
+        echo "CXX=clang++" >> $GITHUB_ENV
+        echo "CROSS_COMPILE=aarch64-linux-gnu-" >> $GITHUB_ENV
     - name: Configure QEMU
       run: |
         cd qemu
@@ -38,8 +43,8 @@ jobs:
         #tar -xvf gcc-linaro-6.4.1-2017.11-x86_64_aarch64-linux-gnu.tar -C /usr/local/toolchain/
         #export PATH=$PATH:/usr/local/toolchain/gcc-linaro-6.4.1-2017.11-x86_64_aarch64-linux-gnu/bin
         
-        export PATH="/usr/local/aarch64-llvm/bin:$PATH"
-        ./configure --enable-kvm --enable-pixman --enable-opengl --enable-gtk  --enable-vnc --enable-guest-agent --cc=aarch64-linux-gnu-clang --cxx=aarch64-linux-gnu-clang++ \
+        
+        ./configure --enable-kvm --enable-pixman --enable-opengl --enable-gtk  --enable-vnc --enable-guest-agent --cc=$CC --cxx=$CXX \
         --enable-cfi --enable-cfi-debug --enable-debug --enable-tcg --enable-plugins CFLAGS=-O2 CFLAGS=-g
       env:
         CROSS_COMPILE: aarch64-linux-gnu-
