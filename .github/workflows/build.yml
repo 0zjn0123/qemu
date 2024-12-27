@@ -30,10 +30,12 @@ jobs:
         sudo apt-get install libepoxy-dev
         sudo apt-get install libgtk-3-dev
         pip install sphinx_rtd_theme
-        wget https://mirrors.tuna.tsinghua.edu.cn/armbian-releases/_toolchains/gcc-linaro-6.4.1-2017.11-x86_64_aarch64-linux-gnu.tar.xz
-        tar -xvf gcc-linaro-6.4.1-2017.11-x86_64_aarch64-linux-gnu.tar -C /usr/local/toolchain/
-        export PATH=$PATH:/usr/local/toolchain/gcc-linaro-6.4.1-2017.11-x86_64_aarch64-linux-gnu/bin
-
+        #wget https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.6/clang+llvm-16.0.6-aarch64-linux-gnu.tar.xz
+        #tar -xvf gcc-linaro-6.4.1-2017.11-x86_64_aarch64-linux-gnu.tar -C /usr/local/toolchain/
+        #export PATH=$PATH:/usr/local/toolchain/gcc-linaro-6.4.1-2017.11-x86_64_aarch64-linux-gnu/bin
+        sudo apt install clang-aarch64-linux-gnu
+        export CC=aarch64-linux-gnu-clang
+        export CXX=aarch64-linux-gnu-clang++
         ./configure --enable-kvm --enable-pixman --enable-opengl --enable-gtk  --enable-vnc --enable-guest-agent --cc=aarch64-linux-gnu-clang \
         --cxx=aarch64-linux-gnu-clang++ \ 
         --enable-cfi --enable-cfi-debug --enable-debug --enable-tcg --enable-plugins CFLAGS=-O2 CFLAGS=-g
